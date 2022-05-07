@@ -1,0 +1,9 @@
+---
+- hosts: default
+  gather_facts: False
+  tasks: 
+    - name: "Check if minikube is running"
+      shell: "minikube status"
+      register: minikube_status
+    
+
