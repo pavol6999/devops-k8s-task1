@@ -39,6 +39,20 @@ PaaS/Minikube
 
 - Make sure Minikube is installed and running properly.
 
+- Create namespace for the task
+
 ```
-kubectl create -f k8s/tasks.ns.yml
+kubectl create -f k8s/task.ns.yml
+```
+
+- Create a service account
+
+```
+kubectl apply -f k8s/task.sa.yml -n devops
+```
+
+- Create our dev deployment serving NGINX base image
+
+```
+kubectl apply -f k8s/development/task.deployment.yml -n devops
 ```
