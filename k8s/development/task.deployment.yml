@@ -36,3 +36,10 @@ spec:
           requests:
             memory: 256Mi
             cpu: 1
+        env:
+        - name: API_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: supersecret
+              key: API_TOKEN
+              optional: false

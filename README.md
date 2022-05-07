@@ -62,3 +62,21 @@ kubectl apply -f k8s/development/task.deployment.yml -n devops
 ```
 kubectl apply -f k8s/development/task.service.yml -n devops
 ```
+
+- Create our HPA for dev deployment
+
+```
+kubectl apply -f k8s/development/task.autoscale.yml
+```
+
+- Create our PDB for dev deployment
+
+```
+kubectl apply -f k8s/development/task.pdb.yml
+```
+
+- Create our secret for dev deployment
+
+```
+kubectl apply -f k8s/development/secrets/task.secret.yml
+```
