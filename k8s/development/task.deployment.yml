@@ -6,7 +6,10 @@ metadata:
   labels:
     app: nginx
 spec:
-  
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 3
+    maxUnavailable: 1
   replicas: 3
   selector:
     matchLabels:
@@ -20,7 +23,14 @@ spec:
       serviceAccountName: bilbo
       containers:
       - name: nginx
-        image: nginx:1.21.6
+        image: nginx:1.14.2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"
