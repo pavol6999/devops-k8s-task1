@@ -6,10 +6,12 @@ metadata:
   labels:
     app: nginx
 spec:
-  type: RollingUpdate
-  rollingUpdate:
-    maxSurge: 3
-    maxUnavailable: 1
+  
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 1
   replicas: 3
   selector:
     matchLabels:
@@ -30,7 +32,7 @@ spec:
         resources:
           limits:
             memory: 512Mi
-            cpu: "1"
+            cpu: 2
           requests:
             memory: 256Mi
-            cpu: "0.2"
+            cpu: 1
