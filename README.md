@@ -56,3 +56,9 @@ kubectl apply -f k8s/task.sa.yml -n devops
 ```
 kubectl apply -f k8s/development/task.deployment.yml -n devops
 ```
+
+- Create our service for dev deployment
+
+```
+kubectl apply -f k8s/development/task.service.yml -n devops
+```

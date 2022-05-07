@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-dev
+  name: nginx
   namespace: devops
   labels:
-    app: nginx-dev
+    app: nginx
 spec:
   
   replicas: 3
   selector:
     matchLabels:
-      app: nginx-dev
+      app: nginx
   template:
     
     metadata:
       labels:
-        app: nginx-dev
+        app: nginx
     spec:
       serviceAccountName: bilbo
       containers:
